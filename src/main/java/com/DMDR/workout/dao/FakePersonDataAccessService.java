@@ -62,6 +62,7 @@ public class FakePersonDataAccessService implements PersonDao{
         if (person.isEmpty()) {
             return 0;
         }
+
         person.get().getMeals().add(meal);
         return 1;
     }
