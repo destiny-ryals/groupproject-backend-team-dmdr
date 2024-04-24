@@ -1,6 +1,9 @@
 package com.DMDR.workout.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 
 
@@ -32,4 +35,8 @@ public class Person {
     public List<MealPlanner> getMeals() {
         return meals;
     }
+
+    @OneToMany(cascade = CascadeType.PERSIST)
+    @JsonManagedReference
+    private List<Goal> goals;
 }

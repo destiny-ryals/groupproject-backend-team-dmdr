@@ -21,7 +21,7 @@ public class PersonService {
         this.personDao = personDao;
     }
 
-    public int addPerson(Person person) {
+    public int addPerson(UUID id, Person person) {
         return personDao.insertPerson(person);
     }
 

@@ -5,6 +5,7 @@ import com.DMDR.workout.model.Person;
 import com.DMDR.workout.service.PersonService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,14 @@ public class PersonController {
     }
 
     @PostMapping
-    public void addPerson(@Valid @NonNull @RequestBody Person person) {
-        personService.addPerson(person);
+    public ResponseEntity<Person> addPerson(@Valid @NonNull @RequestBody Person person) {
+        UUID id = UUID.randomUUID();
+        int result = personService.addPerson(id,person);
+        if (result == 1){
+            return ResponseEntity.ok().build();
+        }else{
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
     @GetMapping
