@@ -14,7 +14,7 @@ public class MealPlanner {
     @NotBlank
     private final String name;
 
-    private final List<MealPlanner> meals = new ArrayList<>();
+    private final List<Meal> meals = new ArrayList<>();
 
     public MealPlanner(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
         this.id = id;
@@ -29,7 +29,7 @@ public class MealPlanner {
         return name;
     }
 
-    public List<MealPlanner> getMeals() {
+    public List<Meal> getMeals() {
         return meals;
     }
 }
