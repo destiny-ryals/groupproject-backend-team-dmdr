@@ -1,5 +1,6 @@
-package com.DMDR.workout.dao;
+package com.DMDR.workout.service;
 
+import com.DMDR.workout.dao.WorkoutDao;
 import com.DMDR.workout.model.Workout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

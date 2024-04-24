@@ -11,9 +11,4 @@ public class WorkoutApplication {
 		SpringApplication.run(WorkoutApplication.class, args);
 	}
 
-<<<<<<< HEAD:src/main/java/com/DMDR/domain/workout/WorkoutApplication.java
 }
-a
-=======
-}
->>>>>>> 0caf5b4 (updates- not working):src/main/java/com.DMDR.workout/WorkoutApplication.java

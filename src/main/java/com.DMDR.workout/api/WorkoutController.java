@@ -1,11 +1,9 @@
 package com.DMDR.workout.api;
 
-import com.DMDR.workout.dao.WorkoutService;
-import com.DMDR.workout.model.Person;
+import com.DMDR.workout.service.WorkoutService;
 import com.DMDR.workout.model.Workout;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

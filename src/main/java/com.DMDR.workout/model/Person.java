@@ -3,6 +3,8 @@ package com.DMDR.workout.model;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 
@@ -10,6 +12,7 @@ import jakarta.validation.constraints.NotBlank;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 
 public class Person {
 
@@ -36,7 +39,7 @@ public class Person {
         return meals;
     }
 
-    @OneToMany(cascade = CascadeType.PERSIST)
+    /*@OneToMany(cascade = CascadeType.PERSIST)
     @JsonManagedReference
-    private List<Goal> goals;
+    private List<Goal> goals;*/
 }
