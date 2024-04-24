@@ -1,5 +1,6 @@
 package com.DMDR.workout.api;
 
+import com.DMDR.workout.model.Meal;
 import com.DMDR.workout.model.MealPlanner;
 import com.DMDR.workout.model.Person;
 import com.DMDR.workout.service.PersonService;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.UUID;
 
+@CrossOrigin("*")
 @RequestMapping("api/v1/person")
 @RestController
 public class PersonController {
@@ -53,6 +55,15 @@ public class PersonController {
     public ResponseEntity<?> addMealToUser(@PathVariable UUID userId, @RequestBody MealPlanner meal) {
         personService.addMealToUser(userId, meal);
         return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/{userId}/MealPlanner")
+    public List<MealPlanner> GetUserMeals(@PathVariable UUID userId) {
+        Person user = getPersonById(userId);
+        if (user == null){
+            return null;
+        }
+        return user.getMeals();
     }
 
 }

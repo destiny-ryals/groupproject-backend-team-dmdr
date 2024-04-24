@@ -16,7 +16,7 @@ public class MealAccessDataService implements MealPlannerDao {
 
     @Override
     public int insertMealPlan(UUID mealId, MealPlanner mealPlanner) {
-        mealDB.add(new MealPlanner(mealId, mealPlanner.getName()));
+        mealDB.add(new MealPlanner( mealPlanner.getName()));
         return 1;
     }
 
@@ -48,7 +48,7 @@ public class MealAccessDataService implements MealPlannerDao {
                 .map(mealPlan -> {
                     int indexOfPersonToUpdate = mealDB.indexOf(mealPlan);
                     if (indexOfPersonToUpdate >= 0) {
-                        mealDB.set(indexOfPersonToUpdate, new MealPlanner(mealId, mealPlanner.getName()));
+                        mealDB.set(indexOfPersonToUpdate, new MealPlanner( mealPlanner.getName()));
                         return 1;
                     }
                     return 0;

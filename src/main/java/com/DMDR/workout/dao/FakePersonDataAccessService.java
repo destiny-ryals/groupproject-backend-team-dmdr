@@ -2,6 +2,7 @@ package com.DMDR.workout.dao;
 
 import com.DMDR.workout.model.MealPlanner;
 import com.DMDR.workout.model.Person;
+import com.DMDR.workout.api.MealPlannerController;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -62,10 +63,30 @@ public class FakePersonDataAccessService implements PersonDao{
         if (person.isEmpty()) {
             return 0;
         }
-
         person.get().getMeals().add(meal);
         return 1;
     }
+
+    @Override
+    public List<MealPlanner> getUserMeals(UUID id){
+        Optional<Person> person = selectPersonById(id);
+
+        return person.get().getMeals();
+    }
+
+    @Override
+    public int deleteMeal(UUID userId, UUID mealId) {
+        Optional<Person> person = selectPersonById(userId);
+        if (person.isEmpty()) {
+            return 0;
+        }
+        else if (person.get().getMeals().isEmpty()){
+            return 0;
+        }
+        person.get().getMeals().
+        return 0;
+    }
+
 
 
 }

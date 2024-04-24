@@ -10,14 +10,15 @@ import java.util.UUID;
 
 public class MealPlanner {
 
+
     private final UUID id;
     @NotBlank
     private final String name;
 
     private final List<Meal> meals = new ArrayList<>();
 
-    public MealPlanner(@JsonProperty("id") UUID id, @JsonProperty("name") String name) {
-        this.id = id;
+    public MealPlanner( @JsonProperty("name") String name) {
+        this.id = UUID.randomUUID();
         this.name = name;
     }
 
@@ -28,6 +29,8 @@ public class MealPlanner {
     public String getName() {
         return name;
     }
+
+
 
     public List<Meal> getMeals() {
         return meals;

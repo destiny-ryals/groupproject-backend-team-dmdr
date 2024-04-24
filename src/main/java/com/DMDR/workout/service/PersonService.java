@@ -44,4 +44,12 @@ public class PersonService {
     public int addMealToUser (UUID id, MealPlanner meal ) {
         return personDao.addMealToUser(id, meal);
     }
+
+    public List<MealPlanner> getUserMeals(UUID id) {
+        return personDao.getUserMeals(id);
+    }
+
+    public int deleteMeal(UUID userId, UUID mealId){
+        return personDao.deleteMeal(userId, mealId);
+    }
 }

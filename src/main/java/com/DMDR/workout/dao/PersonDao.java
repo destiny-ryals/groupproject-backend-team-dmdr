@@ -26,4 +26,7 @@ public interface PersonDao {
 
     int addMealToUser(UUID id, MealPlanner meal);
 
+    List<MealPlanner> getUserMeals(UUID id);
+
+    int deleteMeal(UUID userId, UUID mealId);
 }
